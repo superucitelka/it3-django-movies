@@ -1,2 +1,3 @@
 # Malá filmová databáze
-Framework Django
+## Framework Django
+Autor: Marek Lučný
