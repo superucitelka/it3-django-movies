@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Filmy</title>
-</head>
-<body>
-    <h1>Úvodní stránka - Filmy</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mt-3 mb-3 bg-warning p-3">
+    <div class="col-sm-12">
+        <h2 class="text-center">Nejlépe hodnocené filmy</h2>
+    </div>
+</div>
+<div class="row">
+    {% for film in films %}
+    <div class="col-sm-4">
+        <div class="card">
+            {% if film.poster %}
+            <img class="card-img-top" src="{{ film.poster.url }}" alt="{{ film.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title">{{ film.title }}</h4>
+                <p class="card-text"><strong>Žánry:</strong> {% for genre in film.genres.all %}{{ genre.name }}{% endfor %}</p>
+                <p><strong>Hodnocení:</strong> {{ film.rate }}</p>
+                <a href="#" class="btn btn-primary">Podrobnosti</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <strong>Celkový počet filmů:</strong> {{ num_films }}
+    </div>
+</div>
+{% endblock %}
