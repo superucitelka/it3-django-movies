@@ -4,8 +4,14 @@
     <list default="true" id="c250b734-4038-4791-a222-3454ffc2e6c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hildaweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hildaweb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/migrations/0002_auto_20210224_2213.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/migrations/0003_auto_20210224_2225.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/migrations/0004_attachment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/migrations/0005_film_poster.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
