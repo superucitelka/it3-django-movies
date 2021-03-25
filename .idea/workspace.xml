@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c250b734-4038-4791-a222-3454ffc2e6c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/movies/context_processors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/templates/blocks/genre_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/templates/blocks/top_ten.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/templates/film/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/templates/film/genre.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/templates/film/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hildaweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hildaweb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/film/1/poster/pulp-fiction.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/film/2/poster/vetrelec.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/film/3/poster/dobyvatele-ztracene-archy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/migrations/0004_film_poster.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/migrations/0004_film_poster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movies/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/topten.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +50,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/movies/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wysoglad" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\it3\django\movies\templates\page" />
+      <recent name="C:\it3\django\movies" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\it3\django\movies\templates\blocks" />
+      <recent name="C:\it3\django\movies\templates\film" />
+      <recent name="C:\it3\django\movies\static" />
       <recent name="C:\it3\django\movies\templates" />
     </key>
   </component>
@@ -54,10 +79,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2610" y="218" key="FileChooserDialogImpl" timestamp="1614843143715">
+    <state x="2610" y="218" key="FileChooserDialogImpl" timestamp="1616623916874">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="218" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1614843143715" />
+    <state x="2610" y="218" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1616623916874" />
     <state x="2272" y="77" key="SettingsEditor" timestamp="1614186496153">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

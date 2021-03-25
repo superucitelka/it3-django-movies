@@ -1,0 +1,17 @@
+.lightGallery {
+    width: 100%;
+    margin: 0
+}
+
+#lightgallery .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px
+}
+
+.lightGallery .image-tile {
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 10px
+}

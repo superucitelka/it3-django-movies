@@ -1,0 +1,32 @@
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <!-- Brand -->
+      <a class="navbar-brand text-warning" href="#">MFD</a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'index' %}">Úvodní stránka</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'films' %}">Filmy</a>
+          </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Žánry
+              </a>
+              <div class="dropdown-menu">
+                 {% for genre in genres %}
+                    <a class="dropdown-item" href="{% url 'film_genre' genre.name %}">{{ genre.name }}</a>
+                 {% endfor %}
+              </div>
+            </li>
+        </ul>
+      </div>
+    </nav>

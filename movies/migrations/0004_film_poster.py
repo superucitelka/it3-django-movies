@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='film',
             name='poster',
-            field=models.ImageField(blank=True, null=True, upload_to=movies.models.poster_path, verbose_name='Poster'),
+            field=models.ImageField(blank=True, null=True, upload_to='film/posters/%Y/%m/%d/', verbose_name='Poster'),
         ),
     ]

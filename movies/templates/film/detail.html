@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Detail filmu{% endblock %}
+{% block css %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-sm-12 bg-warning">
+        <h2 class="display-4 text-center">Podrobné informace</h2>
+    </div>
+</div>
+<div class="row mt-5 mb-3">
+    <div class="col-lg-6 mb-3">
+        <h2 class="display-4 mb-3">{{ film_detail.title }}</h2>
+        <div class="bg-secondary text-light p-2 mb-3">Rok vzniku: {{ film_detail.release_date.year }}, stopáž: {{ film_detail.runtime }} minut,
+            {% with ''|center:film_detail.rate as range %}
+            {% for _ in range %}★{% endfor %}
+            {% endwith %}
+            <b>{{ film_detail.rate }}</b>
+        </div>
+        <div class="row">
+            <div class="col-md-9">{{ film_detail.plot }}</div>
+            <div class="col-md-3">
+                <a href="{{ film_detail.poster.url }}" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="{{ film_detail.poster.url }}" class="img-fluid" alt="Plakát k filmu">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 bg-light p-3">
+        <h3 class="border-bottom pb-3 text-secondary text-center text-uppercase">Fotogalerie</h3>
+        <div class="row">
+        {% for image in film_detail.attachment_set.all %}
+            <div class="col-lg-6 col-xl-4">
+                <a href="{{ image.file.url }}" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="{{ image.file.url }}" class="img-fluid img-thumbnail" alt="{{ image.title }}">
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script>
+    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+{% endblock %}

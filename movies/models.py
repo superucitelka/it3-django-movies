@@ -3,17 +3,11 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.urls import reverse
 
 """ Metoda vrací cestu k uploadovaným souborů - přílohám filmů.
-    Cesta má obecnou podobu: film/id-filmu/attachments/nazev-souboru. 
+    Cesta má obecnou podobu: film/id-filmu/attachments/nazev-souboru.
     Parametr instance odkazuje na instanci (objekt) filmu.
     Parametr filename obsahuje název uploadovaného souboru. """
-
 def attachment_path(instance, filename):
     return "film/" + str(instance.film.id) + "/attachments/" + filename
-
-""" Metoda vrací cestu k uploadovanému plakátu. """
-
-def poster_path(instance, filename):
-    return "film/" + str(instance.id) + "/poster/" + filename
 
 
 class Genre(models.Model):
@@ -46,7 +40,7 @@ class Film(models.Model):
                                   help_text="Please enter an integer value (minutes)",
                                   verbose_name="Runtime")
     # Pole typu image, které umožňuje upload obrázku s plakátem filmu
-    poster = models.ImageField(upload_to=poster_path, blank=True, null=True, verbose_name="Poster")
+    poster = models.ImageField(upload_to='film/posters/%Y/%m/%d/', blank=True, null=True, verbose_name="Poster")
     # Pole pro zadání desetinného čísla vyjadřujícího hodnocení filmu v rozsahu 1.0 až 10.0
     # Výchozí hodnota je nastavena na 5.0
     # K validaci hodnot jsou použity metody z balíku/knihovny django.core.validators
@@ -72,6 +66,8 @@ class Film(models.Model):
     def get_absolute_url(self):
         """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
         return reverse('film-detail', args=[str(self.id)])
+
+
 
 """ Třída Attachment je modelem pro databázový objekt (tabulku), který bude obsahovat údaje o přílohách filmů """
 

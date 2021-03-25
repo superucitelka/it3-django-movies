@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Seznam filmů{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Seznam filmů: {{ view.kwargs.genre_name }}</h2>
+    </div>
+</div>
+<div class="row">
+    {% for film in film_genre %}
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <div class="card">
+            {% if film.poster %}
+            <img class="card-img-top" src="{{ film.poster.url }}" alt="{{ film.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title"><a href="{% url 'film_detail' film.pk %}">{{ film.title }}</a></h4>
+                <p class="card-text">{% for genre in film.genres.all %}<a href="{% url 'film_genre' genre.name %}" class="btn btn-info">{{ genre.name }}</a> {% endfor %}</p>
+                <a href="{% url 'film_detail' film.pk %}" class="btn btn-primary">Podrobnosti</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <strong>Celkový počet filmů:</strong> {{ num_films }}
+    </div>
+</div>
+{% endblock %}

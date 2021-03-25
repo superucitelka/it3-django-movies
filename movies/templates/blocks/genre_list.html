@@ -1,0 +1,5 @@
+<ul class="list-group">
+    {% for genre in genres %}
+    <li class="list-group-item list-group-item-info"><a class="text-dark" href="{% url 'film_genre' genre.name %}">{{ genre.name }}</a></li>
+    {% endfor %}
+</ul>

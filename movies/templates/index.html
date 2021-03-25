@@ -1,31 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row mt-3 mb-3 bg-warning p-3">
-    <div class="col-sm-12">
-        <h2 class="text-center">Nejlépe hodnocené filmy</h2>
+<div class="row mb-3">
+    <div class="col-sm-12 bg-warning">
+        <h2 class="display-4 text-center">Úvodní stránka</h2>
     </div>
 </div>
 <div class="row">
-    {% for film in films %}
-    <div class="col-sm-4">
-        <div class="card">
-            {% if film.poster %}
-            <img class="card-img-top" src="{{ film.poster.url }}" alt="{{ film.title }}">
-            {% endif %}
-            <div class="card-body">
-                <h4 class="card-title">{{ film.title }}</h4>
-                <p class="card-text"><strong>Žánry:</strong> {% for genre in film.genres.all %}{{ genre.name }}{% endfor %}</p>
-                <p><strong>Hodnocení:</strong> {{ film.rate }}</p>
-                <a href="#" class="btn btn-primary">Podrobnosti</a>
-            </div>
-        </div>
+    <div class="col-md-6">
+        <h2 class="text-center bg-success text-light p-2">Filmové novinky</h2>
+        {% include "blocks/new_films.html" %}
     </div>
-    {% endfor %}
+    <div class="col-md-3">
+        <h2 class="text-center bg-danger text-light p-2">Top deset filmů</h2>
+        {% include "blocks/top_ten.html" %}
+    </div>
+    <div class="col-md-3">
+        <h2 class="text-center bg-info text-light p-2">Filmové žánry</h2>
+        {% include "blocks/genre_list.html" %}
+    </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
-        <strong>Celkový počet filmů:</strong> {{ num_films }}
-    </div>
 </div>
 {% endblock %}
