@@ -2,6 +2,6 @@
 ## Framework Django
 Autor: Marek Lučný
 
-Přístupy administrátorů:
-hilda: TridaIT3
-administrator: administrator
+###Přístupy administrátorů:
+*hilda: TridaIT3
+*administrator: administrator
