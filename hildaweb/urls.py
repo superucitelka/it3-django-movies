@@ -26,3 +26,7 @@ urlpatterns = [
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "MFD Administrace"
+admin.site.site_title = "Malá filmová databáze"
+admin.site.index_title = "Vítejte v administrační části MFD"

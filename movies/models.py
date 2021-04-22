@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.urls import reverse
+from django.utils.html import format_html
 
 """ Metoda vrací cestu k uploadovaným souborů - přílohám filmů.
     Cesta má obecnou podobu: film/id-filmu/attachments/nazev-souboru.
@@ -17,12 +18,16 @@ class Genre(models.Model):
     class Meta:
         # atribut ordering definuje upřednostňovaný způsob řazení - zde vzestupně podle pole/sloupce name
         ordering = ["name"]
+        verbose_name = "Žánr"
+        verbose_name_plural = "Žánry"
 
     def __str__(self):
         """ Řetězec, který se používá jako textová reprezentace objektu (například v administraci aplikace).
         V našem případě bude objekt (žánr) reprezentován výpisem obsahu pole name """
         return self.name
 
+    def film_count(self, obj):
+        return obj.film_set.count()
 
 class Film(models.Model):
     # Fields
@@ -67,6 +72,11 @@ class Film(models.Model):
         """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
         return reverse('film-detail', args=[str(self.id)])
 
+    def release_year(self):
+        return self.release_date.year
+
+    def rate_percent(self):
+        return format_html("{} %", int(self.rate * 10))
 
 
 """ Třída Attachment je modelem pro databázový objekt (tabulku), který bude obsahovat údaje o přílohách filmů """
@@ -100,9 +110,25 @@ class Attachment(models.Model):
     # Metadata
     class Meta:
         # Primární seřazeno podle poslední aktualizace souborů, sekundárně podle typu přílohy
-        ordering = ["-last_update", "type"]
+        # ordering = ["-last_update", "type"]
+        order_with_respect_to = 'film'
 
     # Methods
     def __str__(self):
         """ Textová reprezentace objektu """
         return f"{self.title}, ({self.type})"
+
+    @property
+    def filesize(self):
+        x = self.file.size
+        y = 512000
+        if x < y * 1000:
+            value = round(x/1024, 2)
+            ext = ' KB'
+        elif x < y * 1000**2:
+            value = round(x/1024*2, 2)
+            ext = ' MB'
+        else:
+            value = round(x/1024**3, 2)
+            ext = ' GB'
+        return str(value)+ext
