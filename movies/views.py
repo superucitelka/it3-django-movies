@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 
 from movies.models import Film, Genre, Attachment
@@ -74,3 +75,19 @@ class NewFilmListView(ListView):
     context_object_name = 'films'
     queryset = Film.objects.order_by('release_date').all()
     paginate_by = 2
+
+
+class FilmCreate(CreateView):
+    model = Film
+    fields = ['title', 'plot', 'release_date', 'runtime', 'poster', 'rate', 'genres']
+    initial = {'rate': '5'}
+
+
+class FilmUpdate(UpdateView):
+    model = Film
+    fields = '__all__' # Not recommended (potential security issue if more fields added)
+
+
+class FilmDelete(DeleteView):
+    model = Film
+    success_url = reverse_lazy('films')

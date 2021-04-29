@@ -4,14 +4,14 @@
     <div class="row mt-3 mb-3 pb-2">
         <div class="col-md-2">
             {% if film.poster %}
-            <a href="{% url 'film_detail' film.id %}"><img class="img-fluid" src="{{ film.poster.url }}" alt="{{ film.title }}"></a>
+            <a href="{% url 'film-detail' film.id %}"><img class="img-fluid" src="{{ film.poster.url }}" alt="{{ film.title }}"></a>
             {% endif %}
         </div>
         <div class="col-md-8">
             <h4><a href="{% url 'film_detail' film.id %}">{{ film.title }}</a></h4>
             <p>{{ film.plot|truncatewords:30 }}</p>
             <p class="border-top pt-2">Stopáž: <b>{{ film.runtime }} min.</b>, datum uvedení: <b>{{ film.release_date }}</b></p>
-            <p>Žánry: {% for genre in film.genres.all %}<a href="{% url 'film_genre' genre.name %}" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>
+            <p>Žánry: {% for genre in film.genres.all %}<a href="{% url 'film-genre' genre.name %}" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>
         </div>
         <div class="col-md-2">
             <span class="display-4">{{ film.rate }}</span>

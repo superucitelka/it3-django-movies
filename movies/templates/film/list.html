@@ -16,9 +16,9 @@
             <img class="card-img-top" src="{{ film.poster.url }}" alt="{{ film.title }}">
             {% endif %}
             <div class="card-body">
-                <h4 class="card-title"><a href="{% url 'film_detail' film.pk %}">{{ film.title }}</a></h4>
-                <p class="card-text">{% for genre in film.genres.all %}<a href="{% url 'film_genre' genre.name %}" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>
-                <a href="{% url 'film_detail' film.pk %}" class="btn btn-primary">Podrobnosti</a>
+                <h4 class="card-title"><a href="{% url 'film-detail' film.pk %}">{{ film.title }}</a></h4>
+                <p class="card-text">{% for genre in film.genres.all %}<a href="{% url 'film-genre' genre.name %}" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>
+                <a href="{% url 'film-detail' film.pk %}" class="btn btn-primary">Podrobnosti</a>
             </div>
         </div>
     </div>
@@ -34,6 +34,11 @@
 <div class="row mt-3">
     <div class="col-sm-12">
         <h4>Celkový počet filmů: {{ num_films }}</h4>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-sm-12 text-center">
+        <a href="{% url 'film-create' %}" class="btn btn-success">Nový film</a>
     </div>
 </div>
 {% endblock %}

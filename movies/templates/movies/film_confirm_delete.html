@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Editace filmu{% endblock %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-sm-12 bg-warning">
+        <h2 class="display-4 text-center">Smazání filmu</h2>
+    </div>
+</div>
+<div class="row mt-5 mb-3">
+    <p>Určitě chcete smazat tento film: {{ film }}?</p>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="Yes, delete.">
+    </form>
+</div>
+{% endblock %}
