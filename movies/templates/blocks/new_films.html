@@ -8,7 +8,7 @@
             {% endif %}
         </div>
         <div class="col-md-8">
-            <h4><a href="{% url 'film_detail' film.id %}">{{ film.title }}</a></h4>
+            <h4><a href="{% url 'film-detail' film.id %}">{{ film.title }}</a></h4>
             <p>{{ film.plot|truncatewords:30 }}</p>
             <p class="border-top pt-2">Stopáž: <b>{{ film.runtime }} min.</b>, datum uvedení: <b>{{ film.release_date }}</b></p>
             <p>Žánry: {% for genre in film.genres.all %}<a href="{% url 'film-genre' genre.name %}" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>

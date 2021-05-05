@@ -1,9 +1,13 @@
-from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 
+from movies.forms import FilmModelForm
 from movies.models import Film, Genre, Attachment
+#from .forms import FilmForm
+
 
 def index(request):
     """View function for home page of site."""
@@ -85,9 +89,41 @@ class FilmCreate(CreateView):
 
 class FilmUpdate(UpdateView):
     model = Film
-    fields = '__all__' # Not recommended (potential security issue if more fields added)
+    template_name = 'movies/film_bootstrap_form.html'
+    form_class = FilmModelForm
+    #fields = '__all__' # Not recommended (potential security issue if more fields added)
 
 
 class FilmDelete(DeleteView):
     model = Film
     success_url = reverse_lazy('films')
+
+"""
+def edit_film(request, pk):
+    film = get_object_or_404(Film, pk=pk)
+
+    # If this is a POST request then process the Form data
+    if request.method == 'POST':
+
+        # Create a form instance and populate it with data from the request (binding):
+        form = FilmForm(request.POST)
+
+        # Check if the form is valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
+            #film.due_back = form.cleaned_data['renewal_date']
+            film.save()
+
+            # redirect to a new URL:
+            return HttpResponseRedirect(reverse('film_list') )
+
+    else:
+        form = FilmForm()
+
+    context = {
+        'form': form,
+        'data': film,
+    }
+
+    return render(request, 'movies/film_my_form.html', context)
+"""

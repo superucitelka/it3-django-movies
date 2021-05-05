@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mathfilters',
     'bootstrap_pagination',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

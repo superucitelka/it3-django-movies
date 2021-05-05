@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c250b734-4038-4791-a222-3454ffc2e6c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/movies/templates/movies/film_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movies/templates/movies/film_bootstrap_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/blocks/genre_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/blocks/genre_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hildaweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hildaweb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/movies/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movies/templates/blocks/new_films.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/blocks/new_films.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/blocks/top_ten.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/blocks/top_ten.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/film/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/film/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/film/genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/film/genre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/film/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/film/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/page/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/page/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/views.py" afterDir="false" />
     </list>
@@ -23,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
