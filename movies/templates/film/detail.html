@@ -43,12 +43,14 @@
         </div>
     </div>
 </div>
+{% if user.is_authenticated %}
 <div class="row mb-3">
     <div class="col-sm-12 text-center">
         <a href="{% url 'film-update' film_detail.pk %}" class="btn btn-primary">Upravit</a>
         <a href="{% url 'film-delete' film_detail.pk %}" class="btn btn-danger">Smazat</a>
     </div>
 </div>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}

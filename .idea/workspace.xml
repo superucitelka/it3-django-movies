@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c250b734-4038-4791-a222-3454ffc2e6c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/movies/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/templates/movies/film_bootstrap_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hildaweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hildaweb/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/movies/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/templates/blocks/new_films.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/blocks/new_films.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hildaweb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hildaweb/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/film/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/film/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/film/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/film/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/page/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/page/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/logged_out.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_change_done.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_change_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_reset_complete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_reset_confirm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_reset_done.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_reset_email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/registration/password_reset_form.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/movies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movies/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,19 +49,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\it3\django\movies\templates\movies" />
-      <recent name="C:\it3\django\movies\templates\film" />
-      <recent name="C:\it3\django\movies\static\admin\css" />
-      <recent name="C:\it3\django\templates" />
-      <recent name="C:\it3\django\movies\templates\admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\it3\django\movies\templates\movies" />
       <recent name="C:\it3\django\movies\templates" />
       <recent name="C:\it3\django\movies\templates\admin" />
       <recent name="C:\it3\django\movies\templates\page" />
       <recent name="C:\it3\django\movies" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\it3\django\movies\templates\movies" />
+      <recent name="C:\it3\django\movies\templates\film" />
+      <recent name="C:\it3\django\movies\static\admin\css" />
+      <recent name="C:\it3\django\templates" />
+      <recent name="C:\it3\django\movies\templates\admin" />
     </key>
   </component>
   <component name="SvnConfiguration">
