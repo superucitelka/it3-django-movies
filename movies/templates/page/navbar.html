@@ -31,7 +31,7 @@
         <ul class="navbar-nav">
            {% if user.is_authenticated %}
              <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">User: {{ user.get_username }}</a></li>
-             <li class="nav-item"><a href="{% url 'logout'%}?next={{request.path}}" class="nav-link">Logout</a></li>
+             <li class="nav-item"><a href="{% url 'logout'%}" class="nav-link">Logout</a></li>
            {% else %}
              <li class="nav-item"><a href="{% url 'login'%}?next={{request.path}}" class="nav-link">Login</a></li>
            {% endif %}
