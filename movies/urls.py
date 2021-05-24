@@ -12,4 +12,6 @@ urlpatterns = [
     path('films/<int:pk>/update/', views.FilmUpdate.as_view(), name='film-update'),
     path('films/<int:pk>/delete/', views.FilmDelete.as_view(), name='film-delete'),
     #path('films/<int:pk>/edit/', views.edit_film, name='film-edit'),
+    path('clear_cache/', views.clear_cache),
 ]
+

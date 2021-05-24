@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.urls import reverse
@@ -56,6 +57,7 @@ class Film(models.Model):
                              verbose_name="Rate")
     # Vytvoří vztah mezi modely Film a Genre typu M:N
     genres = models.ManyToManyField(Genre, help_text='Select a genre for this film')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # Metadata
     class Meta:
@@ -132,3 +134,19 @@ class Attachment(models.Model):
             value = round(x/1024**3, 2)
             ext = ' GB'
         return str(value)+ext
+
+
+class Review(models.Model):
+    text = models.TextField(verbose_name="Text")
+    edit_date = models.DateTimeField(auto_now=True)
+    rate = models.IntegerField(default=5,
+                             validators=[MinValueValidator(1), MaxValueValidator(10)],
+                             null=True,
+                             help_text="Please enter an integer value (range 1 - 10)",
+                             verbose_name="Rate")
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    film = models.ForeignKey(Film, on_delete=models.CASCADE)
+
+    # Metadata
+    class Meta:
+        order_with_respect_to = 'film'

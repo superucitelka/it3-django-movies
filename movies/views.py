@@ -1,7 +1,13 @@
+
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy, reverse
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.models import Permission
+from django.core.cache import cache
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.decorators.cache import never_cache
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 
@@ -52,7 +58,6 @@ class FilmListView(ListView):
             context['view_head'] = 'Přehled filmů'
         return context
 
-
 class FilmDetailView(DetailView):
     model = Film
 
@@ -82,49 +87,44 @@ class NewFilmListView(ListView):
     paginate_by = 2
 
 
-class FilmCreate(CreateView):
+class FilmCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Film
     fields = ['title', 'plot', 'release_date', 'runtime', 'poster', 'rate', 'genres']
     initial = {'rate': '5'}
+    login_url = '/accounts/login/'
+    permission_required = 'movies.add_film'
 
 
-class FilmUpdate(UpdateView):
+class FilmUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Film
     template_name = 'movies/film_bootstrap_form.html'
     form_class = FilmModelForm
-    #fields = '__all__' # Not recommended (potential security issue if more fields added)
+    login_url = '/accounts/login/'
+    permission_required = 'movies.change_film'
 
 
-class FilmDelete(DeleteView):
+class FilmDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Film
     success_url = reverse_lazy('films')
+    login_url = '/accounts/login/'
+    permission_required = 'movies.delete_film'
 
-"""
-def edit_film(request, pk):
-    film = get_object_or_404(Film, pk=pk)
 
-    # If this is a POST request then process the Form data
-    if request.method == 'POST':
+def error_404(request, exception=None):
+        return render(request, 'errors/404.html')
 
-        # Create a form instance and populate it with data from the request (binding):
-        form = FilmForm(request.POST)
+def error_500(request):
+    return render(request, 'errors/500.html')
 
-        # Check if the form is valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required (here we just write it to the model due_back field)
-            #film.due_back = form.cleaned_data['renewal_date']
-            film.save()
+def error_403(request, exception=None):
+    return render(request, 'errors/403.html')
 
-            # redirect to a new URL:
-            return HttpResponseRedirect(reverse('film_list') )
+def error_400(request, exception=None):
+    return render(request, 'errors/400.html')
 
-    else:
-        form = FilmForm()
-
-    context = {
-        'form': form,
-        'data': film,
-    }
-
-    return render(request, 'movies/film_my_form.html', context)
-"""
+@never_cache
+def clear_cache(request):
+    if not request.user.is_superuser:
+        raise PermissionDenied
+    cache.clear()
+    return HttpResponse('Cache has been cleared')

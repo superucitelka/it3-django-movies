@@ -42,12 +42,24 @@
         {% endfor %}
         </div>
     </div>
+    <div class="col-lg-12 mb-3 bg-info text-white">
+        <h3 class="text-center p-3">Recenze</h3>
+    </div>
+    <div class="col-lg-12 mb-3">
+        {% for review in film_detail.review_set.all %}
+            <h4>{% if review.author.profile.avatar %}<img src="{{ review.author.profile.avatar.url }}" alt="{{ review.author.user.prijmeni }}" class="rounded-circle" width="50">{% endif %}{{ review.author }} {{ review.edit_date }}</h4>
+            <p>{{ review.text }}</p>
+            <hr>
+        {% endfor %}
+    </div>
 </div>
 {% if user.is_authenticated %}
 <div class="row mb-3">
     <div class="col-sm-12 text-center">
         <a href="{% url 'film-update' film_detail.pk %}" class="btn btn-primary">Upravit</a>
+    {% if perms.movies.delete_film %}
         <a href="{% url 'film-delete' film_detail.pk %}" class="btn btn-danger">Smazat</a>
+    {% endif %}
     </div>
 </div>
 {% endif %}

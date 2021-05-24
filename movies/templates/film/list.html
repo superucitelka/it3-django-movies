@@ -18,7 +18,9 @@
             <div class="card-body">
                 <h4 class="card-title"><a href="{% url 'film-detail' film.pk %}">{{ film.title }}</a></h4>
                 <p class="card-text">{% for genre in film.genres.all %}<a href="{% url 'film-genre' genre.name %}" class="btn btn-light">{{ genre.name }}</a> {% endfor %}</p>
+            {% if user.is_authenticated %}
                 <a href="{% url 'film-detail' film.pk %}" class="btn btn-primary">Podrobnosti</a>
+            {% endif %}
             </div>
         </div>
     </div>
@@ -36,7 +38,7 @@
         <h4>Celkový počet filmů: {{ num_films }}</h4>
     </div>
 </div>
-{% if user.is_authenticated %}
+{% if perms.movies.can_add_film %}
 <div class="row mb-3">
     <div class="col-sm-12 text-center">
         <a href="{% url 'film-create' %}" class="btn btn-success">Nový film</a>

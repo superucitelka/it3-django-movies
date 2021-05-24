@@ -1,9 +1,11 @@
 # accounts/views.py
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy, reverse
 
 from django.views import generic
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
@@ -13,6 +15,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 
 from .forms import SignUpForm
+from .models import Profile
 from .tokens import account_activation_token
 
 
@@ -72,3 +75,16 @@ class SignUpView(generic.CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
+
+class ProfileView(LoginRequiredMixin, generic.UpdateView):
+    model = Profile
+    login_url = '/accounts/login/'
+    template_name = 'registration/profile.html'
+    fields = ['bio', 'avatar', 'location', 'birth_date']
+    success_url = reverse_lazy('profile')
+
+    # PK required in UpdateView, making context['object']
+    def get_object(self, queryset=None):
+        if self.request.user.is_authenticated:
+            queryset = Profile.objects.get(user=self.request.user)
+        return queryset
