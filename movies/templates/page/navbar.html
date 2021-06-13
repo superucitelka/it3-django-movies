@@ -18,7 +18,7 @@
           </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="genres" data-toggle="dropdown">
                 Žánry
               </a>
               <div class="dropdown-menu">
@@ -30,10 +30,24 @@
          </ul>
         <ul class="navbar-nav">
            {% if user.is_authenticated %}
-             <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">User: {{ user.get_username }}</a></li>
-             <li class="nav-item"><a href="{% url 'logout'%}" class="nav-link">Logout</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="user-profile" data-toggle="dropdown">
+                 {{ user.get_username }}
+                 {% load static %}
+                 {% if user.profile.avatar %}
+                     <img src="{{ user.profile.avatar.url }}" alt="User avatar" height="40">
+                 {% else %}
+                     <img src="{% static 'img/avatar-icon.png' %}" alt="Icon avatar" height="40">
+                 {% endif %}
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'profile' %}">Profil uživatele</a>
+                  <a class="dropdown-item" href="{% url 'password_reset' %}">Změnit heslo</a>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Odhlásit se</a>
+              </div>
+            </li>
            {% else %}
-             <li class="nav-item"><a href="{% url 'login'%}?next={{request.path}}" class="nav-link">Login</a></li>
+             <li class="nav-item"><a href="{% url 'login'%}?next={{request.path}}" class="nav-link">Přihlášení</a></li>
            {% endif %}
         </ul>
       </div>

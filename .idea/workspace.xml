@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c250b734-4038-4791-a222-3454ffc2e6c8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hildaweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/hildaweb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/admin/base_site.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/admin/base_site.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies/templates/page/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies/templates/page/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +39,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/registration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ukoly/akceweb" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -67,15 +76,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="171" width="1092" height="809" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619018015793" />
-    <state x="690" y="218" key="FileChooserDialogImpl" timestamp="1621495183781">
+    <state x="690" y="218" key="FileChooserDialogImpl" timestamp="1622998771572">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="218" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621495183781" />
+    <state x="690" y="218" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622998771572" />
     <state x="2610" y="218" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1616661778241" />
     <state x="352" y="77" key="SettingsEditor" timestamp="1621894244694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="352" y="77" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1621894244694" />
-    <state x="2272" y="77" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1614186496153" />
   </component>
 </project>

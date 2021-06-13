@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'mathfilters',
     'bootstrap_pagination',
     'widget_tweaks',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

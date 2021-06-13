@@ -1,0 +1,5 @@
+https://forum.djangoproject.com/t/how-to-set-data-calendar-widget-for-datefield-and-datetimefield-wiht-format-day-month-year-dd-mm-yyyy/7243
+
+https://django-crispy-forms.readthedocs.io/en/latest/faq.html
+
+https://forum.djangoproject.com/t/saving-multiple-models-from-one-form-in-django/2615
